@@ -1,6 +1,7 @@
-from django.urls import path
-from .views import home
+from django.urls import path,include
+from .views import users
 
 urlpatterns = [
-    path('', home, name='home')
+    path('', users, name='user'),
+    path('group/', include('group.urls'))
 ]

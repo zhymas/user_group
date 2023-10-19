@@ -7,7 +7,7 @@ from group.models import Group
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='userprofile')
-    group = models.ForeignKey(Group, on_delete=models.CASCADE, related_name='group_user')
+    group = models.ForeignKey(Group, null=True, blank=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.user.username
