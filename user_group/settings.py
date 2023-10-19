@@ -79,9 +79,9 @@ WSGI_APPLICATION = 'user_group.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'user_group',
-        'USER': 'user_group',
-        'PASSWORD': 'user_group',
+        'NAME': 'users',
+        'USER': 'users',
+        'PASSWORD': 'users',
         'HOST': 'localhost',
         'PORT': '8083',
     }

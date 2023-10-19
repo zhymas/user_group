@@ -1,7 +1,8 @@
 from django.urls import path,include
-from .views import users
+from .views import users, create_user
 
 urlpatterns = [
     path('', users, name='user'),
-    path('group/', include('group.urls'))
+    path('create_user/', create_user, name='create_user'),
+    path('group/', include('group.urls')),
 ]
