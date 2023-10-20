@@ -8,6 +8,11 @@ class UserForm(forms.ModelForm):
         fields = ['username', 'group', 'date_created']
         exclude = ['date_created']
 
+        widgets = {
+            'username': forms.TextInput(attrs={'class': 'form-control'}),
+            'group': forms.Select(attrs={'class': 'form-control'}),
+        }
+
 
 class UserUpdateForm(forms.ModelForm):
 

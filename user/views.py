@@ -1,5 +1,5 @@
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from .models import UserProfile
 from .forms import UserForm
@@ -7,16 +7,18 @@ from .forms import UserForm
 
 def users(request):
     user = UserProfile.objects.all()
-    if user:
-        return render(request, 'user/users.html', {'users': user})
-    else:
-        return JsonResponse({'error': 'users does not exists'})
+    return render(request, 'user/users.html', {'users': user})
 
 
 @csrf_exempt
 def create_user(request):
-    form = UserForm
     if request.method == 'POST':
-        return JsonResponse({'request method': f'{request.method}'})
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('user')
+    else:
+        form = UserForm()
     return render(request, 'user/create_user.html', {'form': form})
+
 

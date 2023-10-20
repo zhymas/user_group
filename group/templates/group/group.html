@@ -1,3 +1,28 @@
 {% extends 'user/base.html' %}
 {% block title %} Groups {% endblock %}
-{% block content %} Hello {% endblock %}
+{% block content %}
+<a href="{% url 'create_group' %}"><button type="button" class="btn btn-primary">Create group</button></a>
+<hr>
+<div class="container">
+    <div class="users_info">
+        <li>Id</li>
+        <li>Name Group</li>
+        <li>Description</li>
+        <li>Users</li>
+      </div>
+</div>
+{% for group in groups %}
+<div class="container">
+    <div class="users">
+        <li>{{group.id}}</li>
+        <li class="group-name">{{group.name}}</li>
+        <li class="group-descriptions">{{group.description}}</li>
+        <li class="group-users">User</li>
+        <div class="edit-button">
+        <li><a href="{% url 'user' %}"><button type="button" class="btn btn-secondary">Edit group</button></a></li>
+            </div>
+      </div>
+</div>
+
+{% endfor %}
+{% endblock %}

@@ -1,5 +1,16 @@
 {% extends 'user/base.html' %}
 {% block title %}Groups{% endblock %}
 {% block content %}
-{{form}}
+<form method="post">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Name group</label>
+    {{form.name}}
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Description</label>
+    {{form.description}}
+  </div>
+  <br>
+    <button type="submit" class="btn btn-outline-success">Create</button>
+</form>
 {% endblock %}
