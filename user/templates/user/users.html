@@ -18,7 +18,7 @@
         <li class="username">{{user.username}}</li>
         <li class="user-group">{{user.group}}</li>
         <div class="edit-button">
-            <li><a href="{% url 'group' %}" class=""><button type="button" class="btn btn-secondary">Edit user</button></a></li>
+            <li><a href="{% url 'edit_user' user.id %}" class=""><button type="button" class="btn btn-secondary">Edit user</button></a></li>
         </div>
       </div>
 </div>

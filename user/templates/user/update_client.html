@@ -1,0 +1,17 @@
+{% extends 'user/base.html' %}
+{% block title %}Groups update{% endblock %}
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+  <div class="form-group">
+    <label for="formGroupExampleInput">Name group</label>
+    {{form.username}}
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Description</label>
+    {{form.group}}
+  </div>
+  <br>
+    <button type="submit" class="btn btn-outline-success">Update</button>
+</form>
+{% endblock %}

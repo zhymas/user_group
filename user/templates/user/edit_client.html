@@ -1,0 +1,13 @@
+{% extends 'user/base.html' %}
+{% block title %}Group edit{% endblock %}
+{% block content %}
+<div class="detail-group">
+<h1>Username: {{user.username}}</h1>
+    <h3>Group:
+        {{user.group}}</h3>
+    <h4>Created: {{user.date_created}}</h4>
+    <h4>Last update: {{user.date_update}}</h4>
+    <a href="{% url 'user_update' user.id %}" class="btn btn-warning">Update</a>
+    <a href="{% url 'user_delete' user.id %}" class="btn btn-danger">Delete</a>
+    </div>
+{% endblock %}

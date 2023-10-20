@@ -17,11 +17,11 @@
         <li>{{group.id}}</li>
         <li class="group-name">{{group.name}}</li>
         <li class="group-descriptions">{{group.description}}</li>
-        <li class="group-users">User</li>
+        <li class="group-users">{{group.users.count}}</li>
         <div class="edit-button">
-        <li><a href="{% url 'user' %}"><button type="button" class="btn btn-secondary">Edit group</button></a></li>
-            </div>
+        <li><a href="{% url 'edit_group' group.id %}"><button type="button" class="btn btn-secondary">Edit group</button></a></li>
       </div>
+</div>
 </div>
 
 {% endfor %}

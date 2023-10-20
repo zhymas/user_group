@@ -68,3 +68,42 @@
   position: fixed;
   left: 875px;
 }
+.detail-group {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.detail-group h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.detail-group h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.detail-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.detail-group li {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.detail-group li::before {
+    content: '\2022'; /* Значок маркера списка (круглая точка) */
+    color: #007bff; /* Цвет маркера списка */
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em; /* Скрываем обычный маркер списка */
+}
+
+.detail-group li:last-child {
+    margin-bottom: 0;
+}
