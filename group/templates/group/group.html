@@ -16,7 +16,7 @@
     <div class="users">
         <li>{{group.id}}</li>
         <li class="group-name">{{group.name}}</li>
-        <li class="group-descriptions">{{group.description}}</li>
+        <li class="group-descriptions">{{group.description|truncatechars:20}}</li>
         <li class="group-users">{{group.users.count}}</li>
         <div class="edit-button">
         <li><a href="{% url 'edit_group' group.id %}"><button type="button" class="btn btn-secondary">Edit group</button></a></li>

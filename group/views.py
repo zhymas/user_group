@@ -20,7 +20,7 @@ def create_group(request):
         form = GroupForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('user')
+            return redirect('group')
     else:
         form = GroupForm()
 

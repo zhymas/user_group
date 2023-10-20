@@ -5,6 +5,7 @@ from .models import UserProfile
 from .forms import UserForm
 from django.views.generic import UpdateView
 
+
 def users(request):
     user = UserProfile.objects.all()
     return render(request, 'user/users.html', {'users': user})
